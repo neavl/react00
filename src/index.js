@@ -4,7 +4,7 @@ import ReactDom from 'react-dom';
 class App extends React.Component {
     render() {
         return(
-            <h1>App работает!</h1>
+            <h1>App  не работает!</h1>
         );
     }
 }
