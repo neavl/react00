@@ -12,7 +12,7 @@ module.exports = {
     ],
     output: {
         publicPath: 'http://localhost:3000/',
-        path: __dirname + '/public',
+        path: __dirname + '/public/',
         filename: 'bundle.js'
     },
     watch: NODE_ENV == 'development',
@@ -50,6 +50,15 @@ module.exports = {
     },
     module: {
         loaders: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loaders: ['react-hot', 'babel-loader'],
+                include: [
+                    path.resolve(__dirname, 'src')
+                ],
+                plugins: ['transform-runtime']
+            },
             {
                 test: /\.(png|jpg|svg|gif)$/,
                 loader: 'file?name=img/[path][name].[ext]'
